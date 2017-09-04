@@ -1,0 +1,15 @@
+------------------------------------------------------------------------------GUIDA--------------------------------------------------------------------------------------
+
+
+PrendeAudizioniDaSitiESalvaNelDB -> prende le audizioni da internet e le salva nel db. Da attivare automaticamente una volta al giorno con crontab (su linux) eseguendo una chiamata GET con curl sullo script
+
+PrendiAudizioniDaDB -> attivato dall'app che riceve i dati presi dallo script con query da db (prenderle sempre da internet ci mette tempo)
+
+
+
+
+BUGS: calcolare le distanze in base al cap o la geolocalizzazione dato che le api di google non risconoscono piu i nomi delle citta tipo "NAPOLI"
+
+DA AGGIUNGERE:  descrizione a scomparsa alla lista delle audizioni
+
+

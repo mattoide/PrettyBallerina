@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1072088637575",
+    "firebase_url": "https://pretty-ballerina.firebaseio.com",
+    "project_id": "pretty-ballerina",
+    "storage_bucket": "pretty-ballerina.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072088637575:android:48085a7c81e494c0",
+        "android_client_info": {
+          "package_name": "com.example.jasmin.pretty_ballerina"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072088637575-tkutjrc2gu3sj4m32rm9496937snrbs4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4Ach4Z5F9LpauVBgIU1Iqz77MCzJ1Kik"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

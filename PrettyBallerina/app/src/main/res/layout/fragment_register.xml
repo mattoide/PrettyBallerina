@@ -1,0 +1,71 @@
+
+<!--<ScrollView
+
+    android:layout_width="match_parent"
+    android:layout_height="600dp"
+
+
+
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jasmin.pretty_ballerina.FragmentRegister">
+   <!-- android:background="@drawable/download"-->
+
+    <EditText
+        android:id="@+id/Retype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="400dp"
+        android:hint="Ri inserisci password"
+        android:inputType="textPassword"
+        android:layout_below="@+id/Username"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="300dp"
+        android:hint="Password"
+        android:layout_below="@+id/Username"
+        android:inputType="textPassword"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/reg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="480dp"
+        android:text="Registrati"
+       android:layout_below="@+id/Retype"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/Username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="203dp"
+        android:gravity="center"
+        android:hint="Username" />
+
+
+</FrameLayout>
+<!--</ScrollView>-->

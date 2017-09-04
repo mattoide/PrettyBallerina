@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Pretty_Ballerina" parent="android:Theme.Material" >
+        <item name="android:colorAccent">@color/accent_material_dark</item>
+        <item name="android:colorForeground">@color/foreground_material_dark</item>
+        <item name="android:textColorPrimary">@color/colorAccent</item>
+    </style>
+</resources>
