@@ -41,7 +41,7 @@ public class Cerca_incitta extends AppCompatActivity{
     EditText CittaE;
     Button InvioB;
     TextView nomecitta, km, linkb;
-    String urlo= "http://192.168.0.107/PrettyBallerinaServer/PrendiAudizioniDaDB.php";
+    String urlo= "http://192.168.1.49/PrettyBallerinaServer/PrendiAudizioniDaDB.php";
 
     URL url= null;
     HttpURLConnection httpURLConnection =null;

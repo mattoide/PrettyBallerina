@@ -21,7 +21,7 @@ public class FragmentRegister extends android.app.Fragment {
     Button registrati;
     Connessione connessione;
 
-    String urlc = "http://192.168.0.107:3001/utenti/registrazione"; //casa
+    String urlc = "http://192.168.1.49:3001/utenti/registrazione"; //casa
     //String urlc = "http://192.168.1.21:3001/utenti/registrazione"; //ufficio
     String result;
 

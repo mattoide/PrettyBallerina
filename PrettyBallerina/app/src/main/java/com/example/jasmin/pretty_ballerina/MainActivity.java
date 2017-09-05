@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Switch not;
     Connessione connessione;
 
-    String urlc = "http://192.168.0.107:3001/utenti/modoficaNotifica"; //casa
+    String urlc = "http://192.168.1.49:3001/utenti/modoficaNotifica"; //casa
    // String urlc = "http://192.168.1.21:3001/utenti/modoficaNotifica";  //ufficio
 
     String result;
