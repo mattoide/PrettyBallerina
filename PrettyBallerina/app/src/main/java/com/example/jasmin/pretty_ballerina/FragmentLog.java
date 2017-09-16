@@ -25,8 +25,10 @@ public class FragmentLog extends android.app.Fragment {
     Button login;
     Connessione connessione;
     String result;
-    String urlc = "http://192.168.1.49:3001/utenti/login"; //casa
-    //String urlc = "http://192.168.1.21:3001/utenti/login"; //ufficio
+
+    String urlc = "http://barboniserver.asuscomm.com:3001/utenti/login"; //casa
+//String urlc = "http://192.168.1.21:3001/utenti/login"; //ufficio
+//String urlc = "http://192.168.1.21:3001/utenti/login"; //ufficio
     EditText username, password;
     SessionManager session;
     JSONObject utente;
