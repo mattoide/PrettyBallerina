@@ -22,93 +22,89 @@ public class FragmentRegister extends android.app.Fragment {
     Connessione connessione;
 
     String urlc = "http://barboniserver.asuscomm.com:3001/utenti/registrazione"; //casa
-//String urlc = "http://192.168.1.21:3001/utenti/registrazione"; //ufficio
+    //String urlc = "http://192.168.1.21:3001/utenti/registrazione"; //ufficio
 //String urlc = "http://192.168.1.21:3001/utenti/registrazione"; //ufficio
     String result;
 
-    EditText username , password, retype;
+    EditText username, password, retype;
 
 
     View v;
 
-        public FragmentRegister() {
-            // Required empty public constructor
-        }
+    public FragmentRegister() {
+        // Required empty public constructor
+    }
 
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            // Inflate the layout for this fragment
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
 
-            this.v = inflater.inflate(R.layout.fragment_register, container, false);
+        this.v = inflater.inflate(R.layout.fragment_register, container, false);
 
-            username = (EditText) v.findViewById(R.id.Username);
-            password =(EditText) v.findViewById(R.id.Password);
-            retype =(EditText) v.findViewById(R.id.Retype);
-
-
-            registrati = (Button) v.findViewById(R.id.reg);
-            registrati.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                        boolean reg;
-                    reg = IniziaReg();
-
-                    if(reg != false) {
-
-                        if (connessione.GetCode() == 5) {
-                            Toast.makeText(getActivity(), "Problemi con il server", Toast.LENGTH_LONG).show();
-                        } else if (connessione.GetCode() == 0) {
-                            Toast.makeText(getActivity(), "Username gia usato", Toast.LENGTH_LONG).show();
-                        } else {
-
-                            FragmentLog f1 = new FragmentLog();
-                            getFragmentManager().beginTransaction().replace(R.id.fragment_container, f1).commit();
-
-                        }
-                    }
-                }
+        username = (EditText) v.findViewById(R.id.Username);
+        password = (EditText) v.findViewById(R.id.Password);
+        retype = (EditText) v.findViewById(R.id.Retype);
 
 
+        registrati = (Button) v.findViewById(R.id.reg);
+        registrati.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                boolean reg;
+                reg = IniziaReg();
 
-                public boolean IniziaReg (){
+                if (reg != false) {
 
-
-
-                    if(!password.getText().toString().equals(retype.getText().toString())){
-                        Toast.makeText(getActivity(), "Le password non combaciano", Toast.LENGTH_LONG).show();
-
-                        return false;
-
+                    if (connessione.GetCode() == 5) {
+                        Toast.makeText(getActivity(), "Problemi con il server", Toast.LENGTH_LONG).show();
+                    } else if (connessione.GetCode() == 0) {
+                        Toast.makeText(getActivity(), "Username gia usato", Toast.LENGTH_LONG).show();
                     } else {
 
-
-                        connessione = new Connessione(urlc, "post", String.valueOf(username.getText()), HashCode.hashCode(String.valueOf(password.getText())), null);
-
-                        try {
-                            result = connessione.execute().get();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        } catch (ExecutionException e) {
-                            e.printStackTrace();
-                        }
-
-return true;
+                        FragmentLog f1 = new FragmentLog();
+                        getFragmentManager().beginTransaction().replace(R.id.fragment_container, f1).commit();
 
                     }
                 }
-            });
+            }
 
 
-            return this.v;
+            public boolean IniziaReg() {
 
 
+                if (!password.getText().toString().equals(retype.getText().toString())) {
+                    Toast.makeText(getActivity(), "Le password non combaciano", Toast.LENGTH_LONG).show();
 
-        }
+                    return false;
+
+                } else {
+
+
+                    connessione = new Connessione(urlc, "post", String.valueOf(username.getText()), HashCode.hashCode(String.valueOf(password.getText())), null);
+
+                    try {
+                        result = connessione.execute().get();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    }
+
+                    return true;
+
+                }
+            }
+        });
+
+
+        return this.v;
 
 
     }
+
+
+}
 
