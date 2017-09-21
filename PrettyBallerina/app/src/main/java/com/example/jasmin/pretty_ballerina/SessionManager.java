@@ -56,7 +56,7 @@ public class SessionManager {
         editor.putString(KEY_NAME, name);
 
         // Storing email in pref
-        editor.putString(KEY_PASSWORD, HashCode.hashCode(password));
+        editor.putString(KEY_PASSWORD, password);
 
         editor.putBoolean(KEY_NOTIFICA, notifica);
         // commit changes

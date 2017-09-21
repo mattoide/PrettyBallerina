@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Switch not;
     Connessione connessione;
 
-    String urlc = "http://barboniserver.asuscomm.com:3001/utenti/modoficaNotifica"; //casa
+    String urlc = "http://barboniserver.asuscomm.com:3001/utenti/modificaNotifica"; //casa
     // String urlc = "http://192.168.1.21:3001/utenti/modoficaNotifica";  //ufficio
     // String urlc = "http://192.168.1.21:3001/utenti/modoficaNotifica";  //ufficio
 
@@ -157,6 +157,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void Notswitch (Boolean IsCheck){
+
+       Log.d("AAAAAA",getApplicationContext().getSharedPreferences(String.valueOf(R.string.preferenze), 0).getString("password", ""));
         connessione = new Connessione(urlc, "post", getApplicationContext().getSharedPreferences(String.valueOf(R.string.preferenze), 0).getString("username", ""),
                 getApplicationContext().getSharedPreferences(String.valueOf(R.string.preferenze), 0).getString("password", "")
                 , IsCheck);
