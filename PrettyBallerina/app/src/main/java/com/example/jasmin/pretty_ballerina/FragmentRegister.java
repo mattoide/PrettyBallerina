@@ -64,12 +64,6 @@ public class FragmentRegister extends android.app.Fragment {
                             Toast.makeText(getActivity(), "Username gia usato", Toast.LENGTH_LONG).show();
                         } else {
 
-
-
-//                            Intent intent = new Intent(getActivity(), MainActivity.class);
-//                            startActivity(intent);
-//                            getActivity().finish();
-
                             FragmentLog f1 = new FragmentLog();
                             getFragmentManager().beginTransaction().replace(R.id.fragment_container, f1).commit();
 

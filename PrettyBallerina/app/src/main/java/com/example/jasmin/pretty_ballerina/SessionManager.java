@@ -77,27 +77,27 @@ public class SessionManager {
 //        return user;
 //    }
 
-    public boolean isLoggedIn(){
-        return pref.getBoolean(IS_LOGIN, false);
-    }
+//    public boolean isLoggedIn(){
+//        return pref.getBoolean(IS_LOGIN, false);
+//    }
 
 
-    public void checkLogin(){
-        // Check login status
-        if(!this.isLoggedIn()){
-            // user is not logged in redirect him to Login Activity
-            Intent i = new Intent(_context, Entrata.class);
-            // Closing all the Activities
-            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-            // Add new Flag to start new Activity
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-            // Staring Login Activity
-            _context.startActivity(i);
-        }
-
-    }
+//    public void checkLogin(){
+//        // Check login status
+//        if(!this.isLoggedIn()){
+//            // user is not logged in redirect him to Login Activity
+//            Intent i = new Intent(_context, Entrata.class);
+//            // Closing all the Activities
+//            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//
+//            // Add new Flag to start new Activity
+//            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//
+//            // Staring Login Activity
+//            _context.startActivity(i);
+//        }
+//
+//    }
 
     public void logoutUser(){
         // Clearing all data from Shared Preferences
