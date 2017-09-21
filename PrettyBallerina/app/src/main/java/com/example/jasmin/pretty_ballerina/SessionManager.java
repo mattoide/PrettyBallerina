@@ -65,17 +65,17 @@ public class SessionManager {
 
 
 
-    public HashMap<String, String> getUserDetails(){
-        HashMap<String, String> user = new HashMap<String, String>();
-        // user name
-        user.put(KEY_NAME, pref.getString(KEY_NAME, null));
-
-        // user email id
-        user.put(KEY_PASSWORD, pref.getString(KEY_PASSWORD, null));
-
-        // return user
-        return user;
-    }
+//    public HashMap<String, String> getUserDetails(){
+//        HashMap<String, String> user = new HashMap<String, String>();
+//        // user name
+//        user.put(KEY_NAME, pref.getString(KEY_NAME, null));
+//
+//        // user email id
+//        user.put(KEY_PASSWORD, pref.getString(KEY_PASSWORD, null));
+//
+//        // return user
+//        return user;
+//    }
 
     public boolean isLoggedIn(){
         return pref.getBoolean(IS_LOGIN, false);
@@ -104,16 +104,18 @@ public class SessionManager {
         editor.clear();
         editor.commit();
 
+
+
         // After logout redirect user to Loing Activity
-        Intent i = new Intent(_context, Entrata.class);
-        // Closing all the Activities
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-        // Add new Flag to start new Activity
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-        // Staring Login Activity
-        _context.startActivity(i);
+//        Intent i = new Intent(_context, Entrata.class);
+//        // Closing all the Activities
+//        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//
+//        // Add new Flag to start new Activity
+//        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//
+//        // Staring Login Activity
+//        _context.startActivity(i);
 
         FirebaseMessaging.getInstance().unsubscribeFromTopic("pb");
     }

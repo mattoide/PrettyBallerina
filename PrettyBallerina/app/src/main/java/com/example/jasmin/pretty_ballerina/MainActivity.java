@@ -43,78 +43,74 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        not = (Switch)findViewById(R.id.switch1);
+        not = (Switch) findViewById(R.id.switch1);
 
         session = new SessionManager(getApplicationContext());
 
-            if (getApplicationContext().getSharedPreferences(String.valueOf(R.string.preferenze), 0).getBoolean("notifica", false) == true) {
+        if (getApplicationContext().getSharedPreferences(String.valueOf(R.string.preferenze), 0).getBoolean("notifica", false) == true) {
 
-                FirebaseMessaging.getInstance().subscribeToTopic("pb");
-                not.setChecked(true);
+            FirebaseMessaging.getInstance().subscribeToTopic("pb");
+            not.setChecked(true);
 
-            } else {
+        } else {
 
-                FirebaseMessaging.getInstance().unsubscribeFromTopic("pb");
-                not.setChecked(false);
+            FirebaseMessaging.getInstance().unsubscribeFromTopic("pb");
+            not.setChecked(false);
 
+        }
+
+
+        not.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+
+                Notswitch(isChecked);
+                session.modificaNotifiche(isChecked);
+
+                if (isChecked == true) {
+
+                    FirebaseMessaging.getInstance().subscribeToTopic("pb");
+                    Log.d("ddd", String.valueOf(isChecked));
+
+                } else {
+
+                    FirebaseMessaging.getInstance().unsubscribeFromTopic("pb");
+                    Log.d("ddd", String.valueOf(isChecked));
+                }
             }
+        });
 
 
+        info = (Button) findViewById(R.id.info); // attiva bottone
 
 
+        info.setOnClickListener(new View.OnClickListener() { // dici che fa sul click
+            @Override
+            public void onClick(View v) {
 
-       not.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-           @Override
-           public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                dialog = new Dialog(MainActivity.this);
 
-
-                   Notswitch(isChecked);
-                   session.modificaNotifiche(isChecked);
-
-               if(isChecked==true){
-
-                   FirebaseMessaging.getInstance().subscribeToTopic("pb");
-                   Log.d("ddd", String.valueOf(isChecked));
-
-               } else {
-
-                   FirebaseMessaging.getInstance().unsubscribeFromTopic("pb");
-                   Log.d("ddd", String.valueOf(isChecked));
-               }
-           }
-       });
-
-
-        info =(Button)findViewById(R.id.info); // attiva bottone
-
-
-       info.setOnClickListener(new View.OnClickListener() { // dici che fa sul click
-           @Override
-           public void onClick(View v) {
-
-               dialog = new Dialog(MainActivity.this);
-
-               dialog.setContentView(R.layout.dialoglay);
-               ok =(Button) dialog.findViewById(R.id.ok);
+                dialog.setContentView(R.layout.dialoglay);
+                ok = (Button) dialog.findViewById(R.id.ok);
 
                 //apre una dialog box
 
 
-              ok.setOnClickListener(new View.OnClickListener() {
-                   @Override
-                   public void onClick(View v) {
-                     dialog.dismiss();
-                   }
-               });
-               dialog.show();
-           }
+                ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
 
 
         });
 
 
-
-        Cerca_cittàB = (Button)findViewById(R.id.Cerca_città);
+        Cerca_cittàB = (Button) findViewById(R.id.Cerca_città);
         Cerca_cittàB.setOnClickListener(new View.OnClickListener() { // dici che fa sul click
             @Override
             public void onClick(View v) {
@@ -127,26 +123,28 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
-        session.checkLogin();
+        // session.checkLogin();
         // get user data from session
 
-        HashMap<String, String> user = session.getUserDetails();
+//        HashMap<String, String> user = session.getUserDetails();
+//
+//        // name
+//        final String name = user.get(SessionManager.KEY_NAME);
+//
+//        // password
+//        String password = user.get(SessionManager.KEY_PASSWORD);
 
-        // name
-        final String name = user.get(SessionManager.KEY_NAME);
 
-        // password
-        String password = user.get(SessionManager.KEY_PASSWORD);
-
-
-        logout = (Button)findViewById(R.id.logout);
+        logout = (Button) findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() { // dici che fa sul click
             @Override
             public void onClick(View v) {
                 session.logoutUser();
 
+
+                Intent i = new Intent(getApplication().getApplicationContext(), Entrata.class);
+                startActivity(i);
+                finish();
 
 
             }
@@ -156,9 +154,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void Notswitch (Boolean IsCheck){
+    public void Notswitch(Boolean IsCheck) {
 
-       Log.d("AAAAAA",getApplicationContext().getSharedPreferences(String.valueOf(R.string.preferenze), 0).getString("password", ""));
+        Log.d("AAAAAA", getApplicationContext().getSharedPreferences(String.valueOf(R.string.preferenze), 0).getString("password", ""));
         connessione = new Connessione(urlc, "post", getApplicationContext().getSharedPreferences(String.valueOf(R.string.preferenze), 0).getString("username", ""),
                 getApplicationContext().getSharedPreferences(String.valueOf(R.string.preferenze), 0).getString("password", "")
                 , IsCheck);

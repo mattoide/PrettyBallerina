@@ -20,12 +20,10 @@ import com.google.firebase.iid.FirebaseInstanceId;
 
 public class Entrata extends Activity {
     Button bn;
-     boolean stato = false;
-FragmentTransaction fragmentTransaction;
+    boolean stato = false;
+    FragmentTransaction fragmentTransaction;
 
     SessionManager session;
-
-
 
 
     @Override
@@ -33,69 +31,61 @@ FragmentTransaction fragmentTransaction;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entrata);
 
-        if (InternetConnection.haveInternetConnection(Entrata.this)){
+        if (InternetConnection.haveInternetConnection(Entrata.this)) {
 
 
+            FragmentManager fragmentManager = getFragmentManager();
+            android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            FragmentLog f1 = new FragmentLog();
+            fragmentTransaction.replace(R.id.fragment_container, f1).commit();
+
+            stato = true;
 
 
-        FragmentManager fragmentManager = getFragmentManager();
-        android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        FragmentLog f1 = new FragmentLog();
-        fragmentTransaction.replace(R.id.fragment_container, f1).commit();
-
-        stato = true;
-
-
-        bn = (Button)findViewById(R.id.vai_registrazione);
-        bn.setOnClickListener( new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-               FragmentManager fragmentManager = getFragmentManager();
-                //fragmentTransaction = fragmentManager.beginTransaction();
+            bn = (Button) findViewById(R.id.vai_registrazione);
+            bn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    //fragmentTransaction = fragmentManager.beginTransaction();
 
 
-                android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
 
+                    if (!stato) {
 
-                if(!stato){
+                        FragmentLog f1 = new FragmentLog();
+                        //android.app.Fragment f1 = new Fragment();
+                        fragmentTransaction.replace(R.id.fragment_container, f1).commit();
+                        //  fragmentTransaction.add(R.id.fragment_container, f1);
+                        // fragmentTransaction.commit();
+                        bn.setText("Vai a registrazione");
+                        stato = true;
+                    } else {
+                        FragmentRegister f2 = new FragmentRegister();
+                        // android.app.Fragment f2 = new Fragment();
+                        fragmentTransaction.replace(R.id.fragment_container, f2).commit();
+                        //fragmentTransaction.add(R.id.fragment_container, f2);
+                        //fragmentTransaction.commit();
+                        bn.setText("Ritorna a Login");
+                        stato = false;
+                    }
 
-                    FragmentLog f1 = new FragmentLog();
-                    //android.app.Fragment f1 = new Fragment();
-                    fragmentTransaction.replace(R.id.fragment_container, f1).commit();
-                  //  fragmentTransaction.add(R.id.fragment_container, f1);
-                   // fragmentTransaction.commit();
-                     bn.setText("Vai a registrazione");
-                    stato = true;
-                }else{
-                   FragmentRegister f2 = new FragmentRegister();
-                   // android.app.Fragment f2 = new Fragment();
-                    fragmentTransaction.replace(R.id.fragment_container,f2).commit();
-                    //fragmentTransaction.add(R.id.fragment_container, f2);
-                    //fragmentTransaction.commit();
-                    bn.setText("Ritorna a Login");
-                    stato = false;
                 }
-
-            }
-        });
+            });
 
 
-
-
-    } else{
+        } else {
             AlertDialog.Builder miaAlert = new AlertDialog.Builder(this);
             miaAlert.setTitle("Connessione a Intenert non presente!");
             miaAlert.setMessage("Senza internet non possiamo cercare le informazioni");
             miaAlert.setCancelable(false);
             AlertDialog alert = miaAlert.create();
             alert.show();
-    }
+        }
 
     }
-
-
-
 
 
 }
