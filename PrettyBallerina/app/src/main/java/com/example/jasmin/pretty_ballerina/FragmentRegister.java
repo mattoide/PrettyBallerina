@@ -1,17 +1,12 @@
 package com.example.jasmin.pretty_ballerina;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.concurrent.ExecutionException;
 
@@ -64,7 +59,7 @@ public class FragmentRegister extends android.app.Fragment {
                         Toast.makeText(getActivity(), "Username gia usato", Toast.LENGTH_LONG).show();
                     } else {
 
-                        FragmentLog f1 = new FragmentLog();
+                        FragmentLogin f1 = new FragmentLogin();
                         getFragmentManager().beginTransaction().replace(R.id.fragment_container, f1).commit();
 
                     }

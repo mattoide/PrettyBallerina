@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -19,8 +18,8 @@ import java.util.List;
  * Created by Jasmin on 08/08/2017.
  */
 
-public class Custom_adapter extends ArrayAdapter<ElementoLista> {
-    public Custom_adapter(Context context, int textViewResourceId, List<ElementoLista> objects) {
+public class CustomAdapter extends ArrayAdapter<ElementoLista> {
+    public CustomAdapter(Context context, int textViewResourceId, List<ElementoLista> objects) {
         super(context, textViewResourceId, objects);
 
     }
@@ -32,7 +31,7 @@ public class Custom_adapter extends ArrayAdapter<ElementoLista> {
 
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        convertView = inflater.inflate(R.layout.lista, null);
+        convertView = inflater.inflate(R.layout.elemento_lista, null);
 
         TextView Citta = (TextView) convertView.findViewById(R.id.Citta);
         final TextView Distanza = (TextView) convertView.findViewById(R.id.Distanza);

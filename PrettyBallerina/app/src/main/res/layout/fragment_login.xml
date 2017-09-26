@@ -14,7 +14,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.jasmin.pretty_ballerina.FragmentLog">
+    tools:context="com.example.jasmin.pretty_ballerina.FragmentLogin">
     <!--android:background="@drawable/download"-->
 
 

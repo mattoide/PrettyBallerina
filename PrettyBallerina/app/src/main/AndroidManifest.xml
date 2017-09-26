@@ -3,6 +3,7 @@
     package="com.example.jasmin.pretty_ballerina">
 <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <service android:name=".ServizioFirebase">
         <intent-filter>
@@ -29,7 +30,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Cerca_incitta" />
+        <activity android:name=".CercaAudizioni" />
         <activity android:name=".MainActivity"
 
 
@@ -46,7 +47,7 @@
             android:exported="true"></service>
 
         <service
-            android:name=".ServiceNot">
+            android:name=".ServiceNotifiche">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>

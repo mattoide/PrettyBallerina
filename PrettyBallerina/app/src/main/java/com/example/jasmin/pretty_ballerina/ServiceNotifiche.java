@@ -8,8 +8,8 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-public class ServiceNot extends FirebaseMessagingService {
-    public ServiceNot() {
+public class ServiceNotifiche extends FirebaseMessagingService {
+    public ServiceNotifiche() {
     }
 
 

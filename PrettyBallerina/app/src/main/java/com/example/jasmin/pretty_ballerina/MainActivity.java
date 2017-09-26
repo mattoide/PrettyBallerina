@@ -2,20 +2,16 @@ package com.example.jasmin.pretty_ballerina;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.Switch;
-import android.widget.Toast;
 
 import com.google.firebase.messaging.FirebaseMessaging;
 
-import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
@@ -91,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
                 dialog = new Dialog(MainActivity.this);
 
-                dialog.setContentView(R.layout.dialoglay);
+                dialog.setContentView(R.layout.dialoginfo);
                 ok = (Button) dialog.findViewById(R.id.ok);
 
                 //apre una dialog box
@@ -114,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         Cerca_cittàB.setOnClickListener(new View.OnClickListener() { // dici che fa sul click
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Cerca_incitta.class);
+                Intent intent = new Intent(MainActivity.this, CercaAudizioni.class);
                 startActivity(intent);
                 finish();
             }

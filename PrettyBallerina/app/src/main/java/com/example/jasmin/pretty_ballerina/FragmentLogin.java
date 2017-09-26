@@ -3,7 +3,6 @@ package com.example.jasmin.pretty_ballerina;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,15 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.messaging.FirebaseMessaging;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.concurrent.ExecutionException;
 
 
-public class FragmentLog extends android.app.Fragment {
+public class FragmentLogin extends android.app.Fragment {
 
     View v;
     Button login;
@@ -33,7 +30,7 @@ public class FragmentLog extends android.app.Fragment {
     SessionManager session;
     JSONObject utente;
 
-    public FragmentLog() {
+    public FragmentLogin() {
         // Required empty public constructor
     }
 
@@ -42,7 +39,7 @@ public class FragmentLog extends android.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        this.v = inflater.inflate(R.layout.fragment_log, container, false);
+        this.v = inflater.inflate(R.layout.fragment_login, container, false);
 
 // Session Manager
         session = new SessionManager(getActivity().getApplication().getApplicationContext());
