@@ -6,8 +6,8 @@
 
 
 
-    xmlns:android="http://schemas.android.com/apk/res/android">
 
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <!--<?xml version="1.0" encoding="utf-8"?>-->
@@ -15,7 +15,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
-    android:background="@drawable/a7"
+    android:background="@drawable/o8302"
 
     >
 <!-- sfondo almeno h 830 come a7-->
@@ -24,7 +24,8 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="100dp"></RelativeLayout>
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentTop="true"></RelativeLayout>
 
 
     <Button

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img3"
+    android:background="@drawable/progetto5"
     tools:context="com.example.jasmin.pretty_ballerina.MainActivity">
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_marginBottom="450dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:text="Ciao! Questa è la tua area personale"
+        android:text="Ciao! Ora puoi cercare le tue audizini"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.033"
@@ -40,7 +40,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/textView"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintVertical_bias="0.306" />
 
 
     <Button
@@ -56,7 +56,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/textView"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.612"
+        app:layout_constraintVertical_bias="0.524"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
@@ -74,10 +74,10 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.936"
+        app:layout_constraintVertical_bias="0.733"
         android:textColor="#f62695"
         android:textSize="25dp"
-        app:layout_constraintHorizontal_bias="0.166" />
+        app:layout_constraintHorizontal_bias="0.142" />
 
     <Button
         android:id="@+id/info"
@@ -89,10 +89,10 @@
         android:layout_marginTop="8dp"
         android:text="INFO"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.883"
+        app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945" />
+        app:layout_constraintVertical_bias="0.73" />
 
 </android.support.constraint.ConstraintLayout>

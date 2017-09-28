@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="330dp"
         android:hint="Ri inserisci password"
         android:inputType="textPassword"
         android:layout_below="@+id/Username"
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="260dp"
         android:hint="Password"
         android:layout_below="@+id/Username"
         android:inputType="textPassword"
@@ -50,7 +50,7 @@
         android:id="@+id/reg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="480dp"
+        android:layout_marginTop="380dp"
         android:text="Registrati"
        android:layout_below="@+id/Retype"
         android:layout_centerHorizontal="true" />
@@ -62,7 +62,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="203dp"
+        android:layout_marginTop="190dp"
         android:gravity="center"
         android:hint="Username" />
 
