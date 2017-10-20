@@ -74,3 +74,9 @@ class ConnessioneDB {
     }
 
 }
+
+
+/* test php mongo
+$a = new ConnessioneDB();
+print_r("aa");
+ */
